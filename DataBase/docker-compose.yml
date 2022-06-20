@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  ES_DB:
+    container_name: ES_DB
+    volumes:
+      - ./scriptDB.sql:/docker-entrypoint-initdb.d/tablescript.sql
+    environment:
+      - MYSQL_USER=es_user
+      - MYSQL_DATABASE=es_db
+      - MYSQL_PASSWORD=kmutt@631305.78
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - '3307:3306'
+    image: mysql:8
+    restart: always
+networks:
+  default:
+    external:
+      name: es_nw
