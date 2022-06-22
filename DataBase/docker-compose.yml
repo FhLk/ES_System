@@ -3,7 +3,7 @@ services:
   ES_DB:
     container_name: ES_DB
     volumes:
-      - ./scriptDB.sql:/docker-entrypoint-initdb.d/tablescript.sql
+      - ./script/table.sql:/docker-entrypoint-initdb.d/table.sql
     environment:
       - MYSQL_USER=es_user
       - MYSQL_DATABASE=es_db
