@@ -19,7 +19,7 @@ public class Student {
     private String lastName;
 
     @Column(name = "Class", nullable = false)
-    private Integer _class;
+    private Integer classNumber;
 
     @Column(name = "Room", nullable = false)
     private Integer room;
@@ -48,12 +48,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public Integer get_class() {
-        return _class;
+    public Integer getClassNumber() {
+        return classNumber;
     }
 
-    public void set_class(Integer _class) {
-        this._class = _class;
+    public void setClassNumber(Integer classNumber) {
+        this.classNumber = classNumber;
     }
 
     public Integer getRoom() {
