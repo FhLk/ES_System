@@ -8,15 +8,15 @@ public class Attendance {
     @EmbeddedId
     private AttendanceId id;
 
-    @MapsId("idStudents")
+    @MapsId("student")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "IdStudents", nullable = false)
-    private Student idStudents;
+    private Student Students;
 
-    @MapsId("idSubject")
+    @MapsId("subject")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "IdSubject", nullable = false)
-    private Subject idSubject;
+    private Subject Subject;
 
     @Column(name = "OnTime")
     private Integer onTime;
@@ -42,19 +42,19 @@ public class Attendance {
     }
 
     public Student getIdStudents() {
-        return idStudents;
+        return Students;
     }
 
     public void setIdStudents(Student idStudents) {
-        this.idStudents = idStudents;
+        this.Students = idStudents;
     }
 
     public Subject getIdSubject() {
-        return idSubject;
+        return Subject;
     }
 
     public void setIdSubject(Subject idSubject) {
-        this.idSubject = idSubject;
+        this.Subject = idSubject;
     }
 
     public Integer getOnTime() {

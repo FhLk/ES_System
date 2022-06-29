@@ -1,9 +1,7 @@
 package com.example.es_system.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "subject")
@@ -15,6 +13,8 @@ public class Subject {
     @Column(name = "NameSubject", length = 50)
     private String nameSubject;
 
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "Subject")
+    List<Attendance> test;
     public String getId() {
         return id;
     }

@@ -27,7 +27,7 @@ public class StudentService {
     public GetStudentDTO getStudent(Integer id){
         Student student =repository.findById(id)
                 .orElseThrow(()->new ResponseStatusException(
-                        HttpStatus.NOT_FOUND,"Category id"+ id +" Does Not Exist !!!"
+                        HttpStatus.NOT_FOUND,"Student id"+ id +" Does Not Exist !!!"
                 ));
         return modelMapper.map(student,GetStudentDTO.class);
     }

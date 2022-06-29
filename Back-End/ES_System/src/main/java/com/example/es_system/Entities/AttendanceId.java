@@ -12,25 +12,25 @@ import java.util.Objects;
 public class AttendanceId implements Serializable {
     private static final long serialVersionUID = 9107650833124826122L;
     @Column(name = "IdStudents", nullable = false)
-    private Integer idStudents;
+    private Integer student;
 
     @Column(name = "IdSubject", nullable = false, length = 10)
-    private String idSubject;
+    private String subject;
 
     public Integer getIdStudents() {
-        return idStudents;
+        return student;
     }
 
-    public void setIdStudents(Integer idStudents) {
-        this.idStudents = idStudents;
+    public void setIdStudents(Integer student) {
+        this.student = student;
     }
 
     public String getIdSubject() {
-        return idSubject;
+        return subject;
     }
 
-    public void setIdSubject(String idSubject) {
-        this.idSubject = idSubject;
+    public void setIdSubject(String subject) {
+        this.subject = subject;
     }
 
     @Override
@@ -38,13 +38,13 @@ public class AttendanceId implements Serializable {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         AttendanceId entity = (AttendanceId) o;
-        return Objects.equals(this.idStudents, entity.idStudents) &&
-                Objects.equals(this.idSubject, entity.idSubject);
+        return Objects.equals(this.student, entity.student) &&
+                Objects.equals(this.subject, entity.subject);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idStudents, idSubject);
+        return Objects.hash(student, subject);
     }
 
 }
